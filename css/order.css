@@ -1,0 +1,218 @@
+/* =========================================================
+   order.css – עיצוב ייחודי לדף ההזמנה (הטופס)
+   ========================================================= */
+
+.page-title {
+  background: linear-gradient(135deg, #e0ad00, var(--yellow));
+  color: var(--ink);
+}
+
+.order-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 3%;
+}
+
+.order-form {
+  flex: 1 1 68%;
+  padding: 3%;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(31, 36, 48, 0.1);
+}
+
+.order-form fieldset {
+  margin-bottom: 3%;
+  padding: 2% 3% 3%;
+  border: 2px solid #dfe5f3;
+  border-radius: var(--radius);
+}
+
+.order-form legend {
+  padding: 0 10px;
+  color: var(--blue);
+  font-family: 'Rubik', sans-serif;
+  font-weight: 800;
+}
+
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.field {
+  flex: 1 1 48%;
+  margin-bottom: 2%;
+}
+
+.field label {
+  display: block;
+  font-weight: 700;
+}
+
+.field-wide {
+  flex-basis: 100%;
+}
+
+/* שדות קלט */
+.order-form input[type='text'],
+.order-form input[type='email'],
+.order-form input[type='tel'],
+.order-form input[type='number'],
+.order-form input[type='date'],
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #c9d2e6;
+  border-radius: 10px;
+  background: #fafbff;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  border-color: var(--blue);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(36, 113, 199, 0.18);
+}
+
+/* בדיקות תקינות – צבע לפי מצב השדה */
+.order-form input:not(:placeholder-shown):valid {
+  border-color: var(--green);
+}
+
+.order-form input:not(:placeholder-shown):invalid {
+  border-color: var(--red);
+  background: #fff3f2;
+}
+
+.order-form input[required] + .hint::after,
+.order-form select[required] + .hint::after {
+  content: ' (חובה)';
+  color: var(--red);
+}
+
+.hint {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+.order-form input[type='color'] {
+  width: 60px;
+  height: 38px;
+  padding: 2px;
+  border: 2px solid #c9d2e6;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.order-form input[type='range'] {
+  width: 100%;
+  accent-color: var(--red);
+}
+
+/* רדיו וצ'קבוקס כ"כרטיסים" */
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 30%;
+  margin-bottom: 2%;
+  padding: 10px 14px;
+  border: 2px solid #c9d2e6;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.choice:hover {
+  background: #f1f6ff;
+}
+
+.choice:has(input:checked) {
+  border-color: var(--blue);
+  background: #e6f0ff;
+}
+
+.choice input {
+  accent-color: var(--blue);
+}
+
+/* כפתורי שליחה ואיפוס */
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.form-actions .btn {
+  flex: 1 1 30%;
+  margin: 0;
+}
+
+.btn-reset {
+  background: #fff;
+  box-shadow: 0 4px 0 var(--muted);
+  color: var(--muted);
+}
+
+.btn-reset:hover {
+  box-shadow: 0 7px 0 var(--muted);
+}
+
+/* עמודת מידע בצד */
+.order-aside {
+  flex: 1 1 28%;
+  padding: 3%;
+  border-top: 6px solid var(--red);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(31, 36, 48, 0.1);
+}
+
+.order-aside ul {
+  padding-inline-start: 1.3em;
+}
+
+.order-aside li {
+  margin-bottom: 4%;
+}
+
+.order-aside li::marker {
+  color: var(--red);
+}
+
+@media (max-width: 850px) {
+  .order-layout {
+    flex-direction: column;
+  }
+
+  .order-form,
+  .order-aside {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .order-aside {
+    margin-top: 3%;
+  }
+}
+
+@media (max-width: 500px) {
+  .field,
+  .choice,
+  .form-actions .btn {
+    flex-basis: 100%;
+  }
+}

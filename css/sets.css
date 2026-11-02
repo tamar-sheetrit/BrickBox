@@ -1,0 +1,51 @@
+/* =========================================================
+   sets.css – עיצוב ייחודי לדף הסטים
+   ========================================================= */
+
+.page-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3%;
+}
+
+.page-title > div {
+  flex: 1 1 60%;
+}
+
+.sale-note {
+  flex: 0 1 28%;
+  padding: 2% 3%;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-weight: 700;
+}
+
+.sale-note time {
+  display: block;
+  color: var(--yellow);
+  font-size: 1.2em;
+}
+
+.tips {
+  padding: 3%;
+  border-inline-start: 6px solid var(--blue);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.tips ul {
+  padding-inline-start: 1.4em;
+}
+
+.tips li::marker {
+  color: var(--blue);
+}
+
+@media (max-width: 700px) {
+  .sale-note {
+    flex-basis: 100%;
+  }
+}

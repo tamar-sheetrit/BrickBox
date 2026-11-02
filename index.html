@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BrickBox – חנות קוביות בנייה וסטים להרכבה. משלוח מהיר ושירות אישי.">
+  <title>BrickBox | חנות קוביות בנייה</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Rubik:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="assets/images/logo.png" alt="לוגו BrickBox – מעבר לדף הבית" width="48" height="48">
+      <span>BrickBox</span>
+    </a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-button" aria-label="פתיחה וסגירה של התפריט">&#9776;</label>
+    <nav class="main-nav" aria-label="תפריט ראשי">
+      <ul>
+        <li><a href="index.html" aria-current="page">בית</a></li>
+        <li><a href="pages/sets.html">סטים</a></li>
+        <li><a href="pages/bricks.html">קוביות</a></li>
+        <li><a href="pages/about.html">אודות</a></li>
+        <li><a href="pages/order.html">הזמנה</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>בונים עולם, קובייה אחר קובייה</h1>
+        <p>ב-<strong>BrickBox</strong> תמצאו סטים להרכבה וקוביות בכל צבע ובכל גודל – לילדים, להורים ולכל מי ש<em>אוהב לבנות</em>. <mark>משלוח עד 3 ימי עסקים</mark> לכל הארץ.</p>
+        <a class="btn" href="pages/sets.html">לצפייה בסטים</a>
+        <a class="btn btn-outline" href="pages/order.html">להזמנה</a>
+      </div>
+      <div class="hero-bricks" aria-hidden="true">
+        <span class="brick brick-red"></span>
+        <span class="brick brick-blue"></span>
+        <span class="brick brick-yellow"></span>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>למה לקנות אצלנו?</h2>
+      <ul class="feature-list">
+        <li>
+          <h3>איכות גבוהה</h3>
+          <p>קוביות מפלסטיק <abbr title="Acrylonitrile Butadiene Styrene">ABS</abbr> עמיד, שמתחבר בקלות וגם נפרד בקלות.</p>
+        </li>
+        <li>
+          <h3>משלוח מהיר</h3>
+          <p>עד 3 ימי עסקים לכל הארץ, ואפשר גם לבחור איסוף עצמי.</p>
+        </li>
+        <li>
+          <h3>שירות אישי</h3>
+          <p>לא בטוחים איזה סט מתאים? כתבו לנו ונעזור לבחור.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="pick">
+      <h2>בחרו קובייה</h2>
+      <figure>
+        <img src="assets/images/brick-map.png" width="300" height="180" alt="שלוש קוביות צבעוניות: אדומה, כחולה וצהובה" usemap="#brick-map">
+        <figcaption>לחצו על קובייה כדי להמשיך</figcaption>
+      </figure>
+      <map name="brick-map">
+        <area shape="rect" coords="8,66,92,136" href="pages/bricks.html" alt="קוביות וחבילות" title="קוביות וחבילות">
+        <area shape="rect" coords="108,66,192,136" href="pages/sets.html" alt="סטים להרכבה" title="סטים להרכבה">
+        <area shape="rect" coords="208,66,292,136" href="pages/order.html" alt="הזמנה" title="הזמנה">
+      </map>
+      <ul class="legend">
+        <li>הקובייה האדומה – קוביות וחבילות</li>
+        <li>הקובייה הכחולה – סטים להרכבה</li>
+        <li>הקובייה הצהובה – הזמנה</li>
+      </ul>
+    </section>
+
+    <section class="media">
+      <article>
+        <h2>הג'ינגל של BrickBox</h2>
+        <p>הקישו על הנגן והאזינו למנגינה של החנות.</p>
+        <audio controls src="assets/media/jingle.mp3">הדפדפן שלכם אינו תומך בנגן שמע.</audio>
+      </article>
+      <article>
+        <h2>קטלוג להורדה</h2>
+        <p>כל המוצרים והמחירים בקובץ <abbr title="Portable Document Format">PDF</abbr> אחד.</p>
+        <a class="btn" href="assets/files/catalog.pdf" download>הורדת הקטלוג</a>
+      </article>
+    </section>
+
+    <section class="steps">
+      <h2>איך מזמינים?</h2>
+      <ol>
+        <li>בוחרים סט או חבילת קוביות.</li>
+        <li>ממלאים את <a href="pages/order.html">טופס ההזמנה</a>.</li>
+        <li>מקבלים אישור ותיאום משלוח.</li>
+        <li>פותחים את האריזה ומתחילים לבנות!</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 BrickBox – כל הזכויות שמורות | <a href="pages/about.html">אודות החנות</a></p>
+  </footer>
+  <a class="to-top" href="#top" aria-label="חזרה לראש הדף">&uarr;</a>
+
+</body>
+</html>

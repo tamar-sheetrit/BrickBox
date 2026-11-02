@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="טופס הזמנה של BrickBox.">
+  <title>הזמנה | BrickBox</title>
+  <link rel="icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Rubik:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/order.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="../index.html">
+      <img src="../assets/images/logo.png" alt="לוגו BrickBox – מעבר לדף הבית" width="48" height="48">
+      <span>BrickBox</span>
+    </a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-button" aria-label="פתיחה וסגירה של התפריט">&#9776;</label>
+    <nav class="main-nav" aria-label="תפריט ראשי">
+      <ul>
+        <li><a href="../index.html">בית</a></li>
+        <li><a href="sets.html">סטים</a></li>
+        <li><a href="bricks.html">קוביות</a></li>
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="order.html" aria-current="page">הזמנה</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-title">
+      <h1>טופס הזמנה</h1>
+      <p>ממלאים כמה פרטים, ואנחנו כבר דואגים לשאר.</p>
+    </section>
+
+    <div class="order-layout">
+
+      <form class="order-form" action="thanks.html" method="get">
+
+        <fieldset>
+          <legend>פרטים אישיים</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="fullname">שם מלא</label>
+              <input type="text" id="fullname" name="fullname" placeholder="ישראל ישראלי" required minlength="2" maxlength="40" pattern="[א-תa-zA-Z ]{2,40}" title="אותיות בעברית או באנגלית בלבד (2 עד 40 תווים)">
+              <span class="hint">אותיות בלבד</span>
+            </div>
+            <div class="field">
+              <label for="email">דוא&quot;ל</label>
+              <input type="email" id="email" name="email" placeholder="name@example.com" required>
+              <span class="hint">לשליחת אישור ההזמנה</span>
+            </div>
+            <div class="field">
+              <label for="phone">טלפון נייד</label>
+              <input type="tel" id="phone" name="phone" placeholder="0501234567" required pattern="05[0-9]{8}" title="מספר נייד בן 10 ספרות, מתחיל ב-05">
+              <span class="hint">10 ספרות, מתחיל ב-05</span>
+            </div>
+            <div class="field">
+              <label for="city">עיר</label>
+              <input type="text" id="city" name="city" list="cities" placeholder="התחילו להקליד…" required>
+              <datalist id="cities">
+                <option value="ירושלים">
+                <option value="תל אביב-יפו">
+                <option value="חיפה">
+                <option value="באר שבע">
+                <option value="בני ברק">
+                <option value="ראשון לציון">
+                <option value="אשדוד">
+                <option value="נתניה">
+              </datalist>
+              <span class="hint">בחרו מהרשימה או הקלידו</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>פרטי ההזמנה</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="product">מוצר</label>
+              <select id="product" name="product" required>
+                <option value="">בחרו מוצר…</option>
+                <optgroup label="סטים להרכבה">
+                  <option value="house">בית הכפר – &#8362;119</option>
+                  <option value="car">מכונית המירוץ – &#8362;89</option>
+                  <option value="castle">הטירה הגדולה – &#8362;199</option>
+                </optgroup>
+                <optgroup label="קוביות וחבילות">
+                  <option value="colors">חבילת צבעים – &#8362;79</option>
+                  <option value="plate">לוח בסיס ירוק – &#8362;39</option>
+                  <option value="wheels">סט גלגלים – &#8362;29</option>
+                </optgroup>
+              </select>
+              <span class="hint">אפשר להזמין מוצר אחד בכל טופס</span>
+            </div>
+            <div class="field">
+              <label for="qty">כמות</label>
+              <input type="number" id="qty" name="qty" min="1" max="20" value="1" required>
+              <span class="hint">בין 1 ל-20</span>
+            </div>
+            <div class="field">
+              <label for="delivery-date">תאריך אספקה מועדף</label>
+              <input type="date" id="delivery-date" name="delivery-date" min="2026-11-01">
+            </div>
+            <div class="field">
+              <label for="box-color">צבע האריזה</label>
+              <input type="color" id="box-color" name="box-color" value="#d63230">
+            </div>
+            <div class="field field-wide">
+              <label for="budget">תקציב להזמנה (&#8362;)</label>
+              <input type="range" id="budget" name="budget" min="50" max="500" step="50" value="150" list="budget-marks">
+              <datalist id="budget-marks">
+                <option value="50">
+                <option value="150">
+                <option value="250">
+                <option value="350">
+                <option value="500">
+              </datalist>
+              <span class="hint">גררו כדי לבחור: 50 עד 500 &#8362;</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>אופן קבלה</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="shipping" value="home" checked> משלוח עד הבית</label>
+            <label class="choice"><input type="radio" name="shipping" value="pickup"> איסוף עצמי</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>תוספות והערות</legend>
+          <div class="choices">
+            <label class="choice"><input type="checkbox" name="extras" value="gift"> אריזת מתנה</label>
+            <label class="choice"><input type="checkbox" name="extras" value="manual"> חוברת הוראות נוספת</label>
+            <label class="choice"><input type="checkbox" name="extras" value="news"> עדכונים על מבצעים</label>
+          </div>
+          <div class="field field-wide">
+            <label for="notes">הערות להזמנה</label>
+            <textarea id="notes" name="notes" rows="4" maxlength="200" placeholder="אפשר לכתוב כאן בקשות מיוחדות (עד 200 תווים)"></textarea>
+          </div>
+        </fieldset>
+
+        <label class="choice"><input type="checkbox" name="terms" value="yes" required> קראתי ואני מאשר/ת את תנאי ההזמנה</label>
+
+        <div class="form-actions">
+          <button type="reset" class="btn btn-reset">איפוס הטופס</button>
+          <button type="submit" class="btn">שליחת ההזמנה</button>
+        </div>
+
+      </form>
+
+      <aside class="order-aside">
+        <h2>טוב לדעת</h2>
+        <ul>
+          <li><strong>משלוח</strong> עד 3 ימי עסקים.</li>
+          <li><strong>אישור</strong> ההזמנה יישלח למייל.</li>
+          <li><strong>שאלות?</strong> כתבו ל-<a href="mailto:info@brickbox.example">info@brickbox.example</a>.</li>
+        </ul>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 BrickBox – כל הזכויות שמורות | <a href="about.html">אודות החנות</a></p>
+  </footer>
+  <a class="to-top" href="#top" aria-label="חזרה לראש הדף">&uarr;</a>
+
+</body>
+</html>
